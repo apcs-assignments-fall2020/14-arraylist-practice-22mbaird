@@ -7,7 +7,10 @@ public class MyMain {
         int c = 0;
         for(int i=0;i<list.size(); i++){
             if (list.get(i)%2!=0){
-                c+=1;
+                c++;
+            }
+            else if (list.get(i)%2<0){
+                c++;
             }
 
         }
@@ -16,20 +19,20 @@ public class MyMain {
 
     // Returns true if there is an int that appears in both lists
     public static boolean checkDuplicates(ArrayList<Integer> list1, ArrayList<Integer> list2) { 
-        boolean dupbol = true;
         for(int i=0;i<list1.size(); i++){
-            for(int x=0;x<list2.size(); x++){
-                dupbol = list1.get(i)==list2.get(x);
-                if (dupbol==false){
-                    break;
-                }                    
+            for(int z=0;z<list2.size();z++){
+                if (list1.get(i)==list2.get(z)){
+                    return true;
+
+                }
+            }                    
                     
-            }
-                
         }
-    return dupbol;
-        
+        return false;
+                
     }
+    
+        
         
     
 
@@ -37,7 +40,7 @@ public class MyMain {
     public static ArrayList<Integer> convertToArrayList(int[] arr) { 
         ArrayList<Integer> listnew = new ArrayList<Integer>();
         for (int i=0; i<arr.length; i++){
-            listnew.set(i, arr[i]);
+            listnew.add(i, arr[i]);
         }
         return listnew;
     }
